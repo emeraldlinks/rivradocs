@@ -3,7 +3,7 @@ export default async function (app) {
         console.log('Middleware triggered:', req.url);
     });
 }
-// plugins/middlware/some_middleware.ts -> global middleware (all routes)
+// plugins/middleware/some_middleware.ts -> global middleware (all routes)
 // plugins/auth.pg.ts -> plugin -> api/auth
 // plugins/auth.md.ts -> middleware -> api/auth
 // plugins/users/index.ts -> plugin -> api/users
