@@ -1,8 +1,17 @@
-import { StartServer } from "rivra/server"
+import { StartServer } from "rivra/server";
 
-(async () => {
-  const app = await StartServer();
-  // app.register(...) // register plugins and add custom instance behaviours.
-})();
+let app
 
+async function getServer() {
+  try {
+    if (!app) app = await StartServer();
+  } catch (err) {
+    
+  }
+  return app;
+}
 
+export default async function handler(req, res) {
+  const server = await getServer();
+  server(req, res);
+}
