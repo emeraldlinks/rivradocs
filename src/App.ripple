@@ -1,0 +1,9 @@
+import { track } from 'ripple';
+import {PageRoutes} from "ripple-file-router"
+import { modules } from "./routes";
+import Theme from "./utils/theme.ripple"
+
+export component App() {
+        <Theme />
+        <PageRoutes modules={modules}  />
+}

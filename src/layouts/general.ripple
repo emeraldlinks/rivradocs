@@ -1,0 +1,13 @@
+import type { Component } from "ripple/types";
+import Header from "../components/header.ripple"
+
+
+
+export default component GeneralLayout({children}: {children: Component}){
+
+    <div class="layout grid-pattern dark:bg-[black]">
+        <Header />
+        <children />
+    </div>
+
+} 

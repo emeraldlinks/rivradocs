@@ -1,0 +1,23 @@
+
+import { appStore } from "rivra"
+import { on, effect } from "ripple"
+
+
+export default component Theme (){
+ 
+    const theme = appStore.derive(st => st.theme )
+    theme.subscribe(t => {
+        document.documentElement.className = t 
+    }) 
+
+
+    on(window, "keydown", (e)=> {
+        if (e.ctrlKey && e.key === "d"){
+            e.preventDefault()
+            appStore.update(s => ({theme: s.theme === "light" ? "dark" : "light" }))
+        }
+        
+    })
+
+
+}

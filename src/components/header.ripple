@@ -1,0 +1,46 @@
+
+import { appStore, createStore } from "rivra"
+import {Link } from "ripple-file-router"
+import Logo from "./logo.ripple"
+
+export default component Header(){
+
+    const menu = [
+        {name: "Installation", url: "/", icon: ""},
+        {name: "Showcase", url: "/about", icon: ""},
+        {name: "Docs", url: "/docs", icon: ""},
+    ]
+
+
+    const menu2 = [
+  {name: "Youtube", url: "/", icon: "",  class: "bg-white text-black  dark:bg-black dark:text-white"},
+        {name: "Academy", url: "/about", icon: "", class: "bg-black  text-white dark:bg-white dark:!text-black"},
+    ]
+
+    <div class="headercontainer border-b justify-between text-gray-400 border-gray-600 lg:px-[6%] items-center flex  backdrop-blur-sm sticky top-0 w-full h-[10vh] bg-transparent ">
+        <div class="branding flex items-center   gap-2">
+            <Logo />
+            <span class="text flex flex-col gap-1">
+                <h1 class="name font-extrabold ">
+                    {"Rivra.JS"}
+                </h1>
+                <div class="pass">{"Minimal Full stack framework"} </div>
+            </span>
+        </div>
+
+        <div class="flex items-center gap-4 ">
+            for (const mn of menu){
+                <div class="item">
+                    <Link href={mn.url} >{mn.name} </Link ></div>
+            }
+        </div>
+
+
+        <div class="menu2 flex fitems-center gap-2   ">
+            for (const mn of menu2){
+                <Link href={mn.url}  className={`${mn.class}  p-2 rounded- border border-gray-400 `} > {mn.name} </Link >
+            }
+            
+        </div>
+    </div>
+}

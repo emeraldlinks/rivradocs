@@ -1,0 +1,29 @@
+import { track } from 'ripple';
+import GeneralLayout from '../layouts/general.ripple';
+
+export default component Home() {
+	let count = track(0);
+ const message = track("")
+ const fetchh = async ()=> {
+    const res = await fetch("/api", { 
+        method: "GET",
+        headers: {
+            Authorization: "some som",
+            count: "390",
+        }
+    })
+    const data = await res.json()
+    @message = data.message
+ }
+
+ fetchh()
+	<head>
+		<title>{'RivraJs full stack framework by Cofoundr'}</title>
+	</head>
+	<GeneralLayout>
+		<div class="h-screen lg:px-[8%] py-[2%]  " >
+            <p>{@message} </p>
+            
+         </div>
+	</GeneralLayout>
+}
