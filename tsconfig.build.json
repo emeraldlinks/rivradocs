@@ -2,7 +2,9 @@
   "extends": "./tsconfig.json",
   "include": [
     "index.ts",
-    "api/**/*.ts"
+    "api/**/*.ts",
+    "server.ts",
+    "plugins"
   ],
   "exclude": [
     "node_modules",

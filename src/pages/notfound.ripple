@@ -1,7 +1,4 @@
 import { useRouter, Link } from "rivra/router";
-import { appStore, createStore } from "rivra/stores"
-import createIndexDBStore from "rivra/stores"
-import IndexDBManager from "rivra/stores"
 
 export default component NotFound404() {
   <div class="notfound">

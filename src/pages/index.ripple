@@ -4,6 +4,7 @@ import RippleMarkdown from 'ripple-markdown'
 import Hero from "../components/hero.ripple"
 import createStore from "rivra/stores";
 import createIndexDBStore from "rivra/stores"
+import { Link } from "rivra/router"
 
 export default component Home() {
 	let count = track(0);
