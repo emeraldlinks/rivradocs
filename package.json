@@ -37,6 +37,6 @@
     "remixicon": "^4.7.0",
     "ripple": "^0.2.145",
     "ripple-markdown": "^0.0.4",
-    "rivra": "file:../../packages/ripple-tools/rivra-0.0.16.tgz"
+    "rivra": "^0.0.17"
   }
 }
