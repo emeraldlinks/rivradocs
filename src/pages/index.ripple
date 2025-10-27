@@ -1,5 +1,9 @@
 import { track } from 'ripple';
 import GeneralLayout from '../layouts/general.ripple';
+import RippleMarkdown from 'ripple-markdown'
+import Hero from "../components/hero.ripple"
+import createStore from "rivra/stores";
+import createIndexDBStore from "rivra/stores"
 
 export default component Home() {
 	let count = track(0);
@@ -22,8 +26,43 @@ export default component Home() {
 	</head>
 	<GeneralLayout>
 		<div class="h-screen lg:px-[8%] py-[2%]  " >
+            <Hero />
             <p>{@message} </p>
-            
+            <MyComponent />
          </div>
 	</GeneralLayout>
+}
+
+
+
+export component MyComponent() {
+  const markdown = `
+
+# Rivra
+**(Minimal Ripple tool kit. Not just a router)**
+
+
+
+# Router + full-stack description: 
+Not just a router — Rivra is a complete toolkit combining routing, state management, storage, and full-stack app tooling, all fully accessible
+
+*
+
+## Installation
+
+  `
+
+  <h1 class="text-4xl font-extrabold mt-5 ">{"Installation"} </h1>
+const divref = (e)=> {
+    console.log(e)
+}
+  <div onClick={(e)=> {
+
+  }} {ref divref} class="d dark:bg-black border max-w-[50%] bg-white p-4 rounded-xl mt-5  ">
+   const install = `npm install rivra`
+   <p>{install} </p>
+
+  </div>
+
+  <RippleMarkdown markdown={markdown} />
 }

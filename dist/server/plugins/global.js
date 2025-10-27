@@ -1,9 +1,9 @@
 export default async function (app) {
     app.addHook('preHandler', async (req, reply) => {
-        console.log(req.originalUrl);
-        if (req.originalUrl === "/protected") {
+        console.log("Requested: ", req.originalUrl);
+        if (req.originalUrl === "/api/protected") {
             reply.code(401).send({ error: 'Unauthorized' });
-        }
+        } 
     });
 }
 // plugins/some_plugin.ts -> global plugin (all routes)

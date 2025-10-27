@@ -1,5 +1,5 @@
 import { track } from 'ripple';
-import {PageRoutes} from "ripple-file-router"
+import {PageRoutes} from "rivra/router"
 import { modules } from "./routes";
 import Theme from "./utils/theme.ripple"
 

@@ -4,5 +4,3 @@ import { StartServer } from "rivra/server"
   const app = await StartServer();
   // app.register(...) // register plugins and add custom instance behaviours.
 })();
-
-

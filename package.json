@@ -35,8 +35,8 @@
     "fastify-plugin": "^5.1.0",
     "get-port": "^7.1.0",
     "remixicon": "^4.7.0",
-    "ripple": "^0.2.35",
-    "ripple-file-router": "^0.0.19",
-    "rivra": "^0.0.13"
+    "ripple": "^0.2.145",
+    "ripple-markdown": "^0.0.4",
+    "rivra": "^0.0.16"
   }
 }
