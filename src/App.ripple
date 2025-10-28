@@ -6,4 +6,4 @@ import Theme from "./utils/theme.ripple"
 export component App() {
         <Theme />
         <PageRoutes modules={modules}  />
-}
+}  
