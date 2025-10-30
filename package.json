@@ -38,6 +38,6 @@
     "ripple": "^0.2.145",
     "ripple-file-router": "^0.0.19",
     "ripple-markdown": "^0.0.4",
-    "rivra": "^0.0.18"
+    "rivra": "^0.0.23"
   }
 }

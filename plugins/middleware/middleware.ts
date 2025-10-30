@@ -1,9 +1,19 @@
-import type { App, Req, Reply } from "rivra"
+import type {Req, Reply } from "rivra"
 
-export default async function (app: App) {
-  app.addHook('preHandler', async (req: Req, reply: Reply) => {
-    console.log('Middleware triggered:', req.url);
-  });
+
+export default function (req: Req, res: Reply) {
+  console.log("Incoming:", req.method, req.url);
+  
+  const truthy = true
+  if (!truthy) {
+    res.code(400).send({error: "Bad request"})
+    return
+  }
+  if (req.url === "/api/blocked") {
+    res.code(403).send({ error: "Forbidden" });
+    return;
+  }
+
 }
 
 // plugins/middleware/some_middleware.ts -> global middleware (all routes)

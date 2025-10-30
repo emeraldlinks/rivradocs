@@ -1,7 +1,14 @@
-export default async function (app) {
-    app.addHook('preHandler', async (req, reply) => {
-        console.log('Middleware triggered:', req.url);
-    });
+export default function (req, res) {
+    console.log("Incoming:", req.method, req.url);
+    const truthy = true;
+    if (!truthy) {
+        res.code(400).send({ error: "Bad request" });
+        return;
+    }
+    if (req.url === "/api/blocked") {
+        res.code(403).send({ error: "Forbidden" });
+        return;
+    }
 }
 // plugins/middleware/some_middleware.ts -> global middleware (all routes)
 // plugins/auth.pg.ts -> plugin -> api/auth

@@ -1,13 +1,15 @@
-export default async function (app) {
-    app.addHook('preHandler', async (req, reply) => {
-        console.log(req.originalUrl);
-        if (req.originalUrl === "/protected") {
-            reply.code(401).send({ error: 'Unauthorized' });
-        }
-    });
+export default async function (req, reply, app) {
+    console.log("global plugin triggered: route: ", req.originalUrl);
+    if (req.url === "/api/users") {
+        reply.send({ message: "Users root route" });
+    }
+    else if (req.url === "/api/users/profile") {
+        reply.send({ message: "User profile route" });
+    }
 }
 // plugins/some_plugin.ts -> global plugin (all routes)
 // plugins/auth.pg.ts -> plugin -> api/auth
 // plugins/auth.md.ts -> middleware -> api/auth
 // plugins/users/index.ts -> plugin -> api/users
 // plugins/users/users.md.ts -> middleware -> api/users
+// You can also access "app" for shared logic
